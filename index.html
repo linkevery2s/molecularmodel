@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+	<meta charset='UTF-8' name='viewport'
+		content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+	<title>インフルエンザ分子モデルの表示</title>
+	<script src="./jmol/jsmol/JSmol.min.js"></script>
+	<script src="./jmol/jsmol/js/Jmol2.js"></script>
+	<style>
+		html,
+		body{
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+
+		body {
+			font-family: "Meiryo", "Hiragino Maru Gothic Pro", sans-serif;
+
+		}
+
+		#contents{
+			border: 1px solid #000000;
+			max-width: 500px;
+			width: 90%;
+			height: 500px;
+			margin: 0 auto;
+		}
+
+		h1{
+			margin: 15px 0 15px 0;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>インフルエンザ分子モデルの表示</h1>
+
+	<div id="contents">
+	<script type="text/javascript">
+
+		let set_model = () => {
+			jmolInitialize(".");
+			jmolApplet("100%", "load 1ea3.pdb; cartoon only; color cartoon structure;", "0");
+
+			jmolBr();
+			jmolHtml("モデル ");
+			jmolMenu([
+				["cartoon on; spacefill off; wireframe off", "Cartoon"],
+				["wireframe on; spacefill off; cartoon off", "Wireframe"],
+				["spacefill off; wireframe 40; cartoon off", 'Stick'],
+				["spacefill off; wireframe 80; cartoon off", 'Bold Stick'],
+				["spacefill 100%; wireframe off; cartoon off", "Spacefillng"]
+			]);
+
+			jmolHtml("&nbsp;");
+			jmolCheckbox("spin on", "spin off", '回転');
+
+		};
+
+		set_model();
+
+	</script>
+	</div>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPP84V2NHB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-MPP84V2NHB');
+	</script>
+
+</body>
+
+</html>
