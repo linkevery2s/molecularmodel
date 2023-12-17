@@ -1,15 +1,26 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="ja">
+<title>インフルエンザ分子モデルの表示</title>
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-	<meta charset='UTF-8' name='viewport'
-		content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
-	<title>インフルエンザ分子モデルの表示</title>
+	<meta charset="UTF-8" name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta property="og:title" content="インフルエンザ分子モデルの表示" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="./ogp.png" />
+	<meta name="description"
+		content="javascriptの分子モデル表示「jsmol」を使って、インフルエンザの分子モデルを表示してみました。分子軌道、カーボン表示など、自由に表現を変更できます。今後の分子シミュレーションにて利用できればと思っています。" />
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="インフルエンザ分子モデルの表示" />
+	<meta name="twitter:image" content="./ogp.png" />
+	<meta name="author" content="仁志">
+	<meta name="keywords" content="jsmol,Jmol,influenza,インフルエンザ,分子モデル" />
 	<script src="./jmol/jsmol/JSmol.min.js"></script>
 	<script src="./jmol/jsmol/js/Jmol2.js"></script>
 	<style>
 		html,
-		body{
+		body {
 			width: 100%;
 			margin: 0;
 			padding: 0;
@@ -21,7 +32,7 @@
 
 		}
 
-		#contents{
+		#contents {
 			border: 1px solid #000000;
 			max-width: 500px;
 			width: 90%;
@@ -29,7 +40,7 @@
 			margin: 0 auto;
 		}
 
-		h1{
+		h1 {
 			margin: 15px 0 15px 0;
 		}
 	</style>
@@ -40,30 +51,30 @@
 	<h1>インフルエンザ分子モデルの表示</h1>
 
 	<div id="contents">
-	<script type="text/javascript">
+		<script type="text/javascript">
 
-		let set_model = () => {
-			jmolInitialize(".");
-			jmolApplet("100%", "load 1ea3.pdb; cartoon only; color cartoon structure;", "0");
+			let set_model = () => {
+				jmolInitialize(".");
+				jmolApplet("100%", "load 1ea3.pdb; cartoon only; color cartoon structure;", "0");
 
-			jmolBr();
-			jmolHtml("モデル ");
-			jmolMenu([
-				["cartoon on; spacefill off; wireframe off", "Cartoon"],
-				["wireframe on; spacefill off; cartoon off", "Wireframe"],
-				["spacefill off; wireframe 40; cartoon off", 'Stick'],
-				["spacefill off; wireframe 80; cartoon off", 'Bold Stick'],
-				["spacefill 100%; wireframe off; cartoon off", "Spacefillng"]
-			]);
+				jmolBr();
+				jmolHtml("モデル ");
+				jmolMenu([
+					["cartoon on; spacefill off; wireframe off", "Cartoon"],
+					["wireframe on; spacefill off; cartoon off", "Wireframe"],
+					["spacefill off; wireframe 40; cartoon off", 'Stick'],
+					["spacefill off; wireframe 80; cartoon off", 'Bold Stick'],
+					["spacefill 100%; wireframe off; cartoon off", "Spacefillng"]
+				]);
 
-			jmolHtml("&nbsp;");
-			jmolCheckbox("spin on", "spin off", '回転');
+				jmolHtml("&nbsp;");
+				jmolCheckbox("spin on", "spin off", '回転');
 
-		};
+			};
 
-		set_model();
+			set_model();
 
-	</script>
+		</script>
 	</div>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MPP84V2NHB"></script>
